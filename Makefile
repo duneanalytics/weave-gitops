@@ -145,7 +145,7 @@ proto-linux:
 
 ##@ Docker
 _docker:
-	DOCKER_BUILDKIT=1 docker build $(DOCKERARGS)\
+	DOCKER_BUILDKIT=1 docker buildx build $(BUILDX_ARGS) $(DOCKERARGS)\
 										-f $(DOCKERFILE) \
 										-t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) \
 										.
